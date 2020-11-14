@@ -1,0 +1,33 @@
+
+body {
+  box-sizing: border-box;
+  margin: 40px;
+  #273c75
+  background: linear-gradient(to right, rgba(#273c75), rgba(226,226,226,1));
+  display: grid;
+}
+
+.list, .ul {
+  display: inline;
+  border-right: 1px solid #bbb;
+}
+
+.container1{
+  margin: 20px;
+  display: grid;
+  flex-direction: column;
+}
+
+.container2{
+  margin: 20px;
+  display: grid;
+  grid-template-columns: auto;
+
+}
+
+.container3{
+  margin: 20px;
+  height: ;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
