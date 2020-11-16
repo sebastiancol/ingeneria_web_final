@@ -1,12 +1,10 @@
 
 body {
-  box-sizing: border-box;
-  margin: 40px;
-  #273c75
   background: linear-gradient(to right, rgba(#273c75), rgba(226,226,226,1));
-  display: grid;
+  /*display: grid;*/
 }
 
+/*
 .list, .ul {
   display: inline;
   border-right: 1px solid #bbb;
@@ -30,4 +28,4 @@ body {
   height: ;
   display: grid;
   grid-template-columns: auto auto auto auto;
-}
+}*/

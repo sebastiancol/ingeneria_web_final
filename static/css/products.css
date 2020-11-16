@@ -1,4 +1,4 @@
-.products, .wrapper {
+/*.products, .wrapper {
   display: grid;
   grid-template:
   margin: 0 0 20px 0;
@@ -17,4 +17,4 @@
   display: flex;
   background-color: #12fa;
   flex-direction: column;
-}
+}*/
