@@ -1,14 +1,21 @@
+*{
+
+}
+
 body {
   height: 100%;
   background: rgb(47,20,152);
   background: linear-gradient(90deg, rgba(47,20,152,1) 20%, rgba(7,111,0,1) 100%);
+  color: whitesmoke;
 }
+
 .contenedor1 {
   margin: 20px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-colum: 100% ;
   flex-direction: column;
   gap: 1em;
+  padding: 50px;
 }
 
 
@@ -39,6 +46,7 @@ li a:hover {
   margin: 20px;
   display: grid;
   grid-template-columns: auto;
+  gap: 2em;
 }
 
 .contenedor3 {
@@ -46,6 +54,14 @@ li a:hover {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto auto;
-  margin: auto;
+  border: aliceblue;
+  gap: 2em;
+  transition: width 2s;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }
 
