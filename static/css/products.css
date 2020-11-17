@@ -1,6 +1,4 @@
-/*.products, .wrapper {
-  display: grid;
-  grid-template:
+/*.products wrappers {
   margin: 0 0 20px 0;
   width: 500px;
   height: 400px;
@@ -8,13 +6,13 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(4, 80px);
-  grid-template-rows: repeat(3,100px);
+  grid-template-rows: repeat(3, 100px);
   justify-content: center;
   align-content: end;
 }
 
-.container1{
+.contenedor1 {
   display: flex;
-  background-color: #12fa;
+  background: #12fa;
   flex-direction: column;
 }*/
