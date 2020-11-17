@@ -1,0 +1,41 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+
+
+
+<div class="contenedor1">
+
+  <h1 >THE STORE</h1>
+
+</div>
+
+<div class="contenedor2">
+  <ul class="list">
+    <li class="active links" ><a href="">INICIO</a></li>
+    <li><a href="{{url_for('products')}}">PRODUCTOS</a></li>
+    <li><a href="{{url_for('category')}}">CATEGORIA</a></li>
+    <li><a href="">CONTACTO</a></li>
+  </ul>
+
+</div>
+
+
+<div class="contenedor3">
+  <div><img src="" alt="">1</div>
+  <div><img src="" alt="">2</div>
+  <div><img src="" alt="">3</div>
+  <div><img src="" alt="">4</div>
+</div>
+
+
+
+<div class="contenedor4">
+    <h1>Nosotros</h1>
+        <p>Nuesta ubicacion</p>
+        <p>Nosotros</p>
+        <img src="" alt="">
+</div>
+
+
+{% endblock %}
