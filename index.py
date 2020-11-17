@@ -18,6 +18,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:C0l0mb14
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+app.secret_key = "secret"
 
 
 class Product(db.Model):
@@ -28,7 +29,7 @@ class Product(db.Model):
     name = db.Column(db.String(50))
     price = db.Column(db.Integer)
     quantity = db.Column(db.Integer)
-    #sales= db.relationship("Sales", back_populates="sales")
+    # sales= db.relationship("Sales", back_populates="sales")
 
     def __repr__(self):
         return '<Product %r>' % self.name
@@ -108,10 +109,14 @@ def products():
 @app.route('/add_product', methods=['POST'])
 def create_product():
     if request.method == 'POST':
-        product = Product(name=request.form['name'],
-                          )
+        product = Product(
+            name=request.form['name'],
+            price=request.form['price'],
+            quantity=request.form['quantity'],
+        )
         db.session.add(product)
         db.session.commit()
+        flash('Se ha guardado el producto correctamente.')
         return redirect(url_for("products"))
 
 
@@ -120,29 +125,21 @@ def delete_product(id):
     product = Product.query.get(id)
     db.session.delete(product)
     db.session.commit()
+    flash('Producto eliminado.')
     return redirect(url_for("products"))
 
 
 @app.route('/edit_product/<string:id>', methods=['POST', 'GET'])
 def edit_product(id):
-
-    cur = mysql.connection.cursor()
-
+    product = Product.query.get(id)
     if request.method == 'GET':
-        cur.execute('SELECT * FROM contacts WHERE id = %s', (id))
-        data = cur.fetchall()
-        return render_template("edit.html", contact=data[0])
+        return render_template("edit_product.html", product=product)
     else:
-        fullname = request.form['fullname']
-        phone = request.form['phone']
-        email = request.form['email']
-        cur.execute("""
-            UPDATE contacts
-            SET fullname=%s, phone=%s, email=%s
-            WHERE id=%s
-            """, (fullname, phone, email, id))
-        mysql.connection.commit()
-        flash('Contact updated succesfully')
+        product.name =name=request.form['name']
+        product.price=request.form['price']
+        product.quantity=request.form['quantity']
+        db.session.commit()
+        flash('Producto actualizado.')
         return redirect(url_for("products"))
 
 
