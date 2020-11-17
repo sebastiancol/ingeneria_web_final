@@ -114,7 +114,12 @@ def create_product():
         return redirect(url_for("products"))
 
 
-
+@app.route('/delete_product/<string:id>')
+def delete_product(id):
+    product= Product.query.get(id)
+    db.session.delete(product)
+    db.session.commit()
+    return redirect(url_for("products"))     
 
 
 #CATEGORY
