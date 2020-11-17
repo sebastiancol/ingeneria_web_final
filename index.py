@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-import os
-import psycopg2
+from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api
-from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
+import psycopg2
+import os
 
 # App declaration
 app = Flask(__name__)
@@ -19,6 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
 class Product(db.Model):
     """Product Model"""
     __tablename__ = 'products'
@@ -32,6 +33,7 @@ class Product(db.Model):
     def __repr__(self):
         return '<Product %r>' % self.name
 
+
 class Category(db.Model):
     """Category Model"""
     __tablename__ = 'category'
@@ -42,10 +44,8 @@ class Category(db.Model):
     product_id = db.Column(db.Integer, db.ForeignKey("products.id"))
     product = db.relationship("Product", backref="products")
 
-
     def __repr__(self):
         return '<Category %r>' % self.name
-
 
 
 '''
@@ -89,26 +89,27 @@ class Payment(db.Model):
 
 '''
 
+# MAIN
 
 
-
-
-#MAIN
 @app.route('/')
 def home():
     return render_template('main.html')
 
-#PRODUCTS
+# PRODUCTS
+
+
 @app.route('/products')
 def products():
-    products=Product.query.all()
-    return render_template ('products.html',products=products)
+    products = Product.query.all()
+    return render_template('products.html', products=products)
 
-@app.route('/add_product',methods=['POST'])
+
+@app.route('/add_product', methods=['POST'])
 def create_product():
-    if request.method=='POST':
-        product=Product(name=request.form['name'],
-        )
+    if request.method == 'POST':
+        product = Product(name=request.form['name'],
+                          )
         db.session.add(product)
         db.session.commit()
         return redirect(url_for("products"))
@@ -116,23 +117,46 @@ def create_product():
 
 @app.route('/delete_product/<string:id>')
 def delete_product(id):
-    product= Product.query.get(id)
+    product = Product.query.get(id)
     db.session.delete(product)
     db.session.commit()
-    return redirect(url_for("products"))     
+    return redirect(url_for("products"))
 
 
-#CATEGORY
+@app.route('/edit_product/<string:id>', methods=['POST', 'GET'])
+def edit_product(id):
+
+    cur = mysql.connection.cursor()
+
+    if request.method == 'GET':
+        cur.execute('SELECT * FROM contacts WHERE id = %s', (id))
+        data = cur.fetchall()
+        return render_template("edit.html", contact=data[0])
+    else:
+        fullname = request.form['fullname']
+        phone = request.form['phone']
+        email = request.form['email']
+        cur.execute("""
+            UPDATE contacts
+            SET fullname=%s, phone=%s, email=%s
+            WHERE id=%s
+            """, (fullname, phone, email, id))
+        mysql.connection.commit()
+        flash('Contact updated succesfully')
+        return redirect(url_for("products"))
+
+
+# CATEGORY
 @app.route('/category')
 def category():
     return render_template('category.html')
 
-#CATEGORY
+# CATEGORY
+
+
 @app.route('/invoice')
 def invoice():
     return render_template('invoice.html')
-
-
 
 
 if __name__ == '__main__':

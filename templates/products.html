@@ -2,11 +2,13 @@
 
 {% block body %}
 
-  <div class="row">
-    <h1>Productos</h1>
+<h1 class="text-center mt-5">Productos</h1>
+
+  <div class="row mt-4">
 
     <div class="col-md-4">
       <div class="card card-body">
+        <h3 class="card-title h4 text-center mb-5">Crear producto</h3>
         <form action="/add_product" , method="POST">
             <div class="form-group">
                 <input type="text" name="name" placeholder="Nombre" autofocus class="form-control">
