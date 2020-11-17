@@ -2,24 +2,38 @@
 
 {% block body %}
 
-<div class="grilla">
-    <h1 class="contenedor1">CATEGORIAS</h1>
-    <div class="grilla2">
-        <p>PARTES</p>
-        <img src="{{url_for('static',filename='images/m.jpeg')}}" alt="categoria1">
-    </div>
+    <h1 class="contenedor1"> CATEGORIAS</h1>
 
-    <div class="grilla2">
-        <p>PORTATILES</p>
-        <img src="{{url_for('static',filename='images/h.jpeg')}}" alt="categoria2">
-    </div>
+        <div class="grilla">
+            <div class="border">
+                <p>COMPONENTES</p>
+                <img class="imagen" src="{{url_for('static',filename='images/m.jpeg')}}" alt="categoria1">
+            </div>
+            <div >
+                 <p>LAPTOPS</p>
+                 <img class="imagen" src="{{url_for('static',filename='images/laptop.jpg')}}" alt="categoria2">
+            </div>
+            <div >
+                <p>DESKTOP</p>
+                <img class="imagen" src="{{url_for('static',filename='images/AiO.png')}}" alt="categoria3">
+            </div>
+            <div>
+                <p>PERISFERISCOS</p>
+                <img class="imagen" src="{{url_for('static',filename='images/perisferics.png')}}" alt="categoria4">
+            </div>
+            <div>
+                <p>HERRAMIENTAS</p>
+                <img class="imagen" src="{{url_for('static',filename='images/tools.png')}}" alt="categoria5">
+            </div>
+            <div>
+                <p>MONITORES</p>
+                <img class="imagen" src="{{url_for('static',filename='images/monitor.jpeg')}}" alt="categoria6">
+            </div>
 
-     <div>
-         <p>TELEVISORES</p>
-        <img src="{{url_for('static',filename='images/disk.jpeg')}}" alt="categoria3">
-     </div>
+        </div>
 
-</div>
+
+
 
 
 
