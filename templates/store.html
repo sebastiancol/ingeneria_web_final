@@ -12,27 +12,31 @@
 
 <div class="contenedor2">
   <ul class="list">
-    <li><a href="">INICIO</a></li>
-    <li><a href="{{url_for('products')}}">PRODUCTOS</a></li>
-    <li><a href="{{url_for('category')}}">CATEGORIA</a></li>
-    <li><a href="">CONTACTO</a></li>
+    <li class="element"><a href="">INICIO</a></li>
+    <li class="element"><a href="{{url_for('products')}}">PRODUCTOS</a></li>
+    <li class="element"><a href="{{url_for('category')}}">CATEGORIA</a></li>
+    <li class="element"><a href="{{url_for('invoice')}}">FACTURA</a></li>
   </ul>
 </div>
 
 <div class="contenedor3">
   <div>
-      <img src="{{url_for('static',filename='imagenes/h.jpeg')}}" alt="">
-      <img src="{{url_for('static',filename='imagenes/m.jpeg')}}" alt="">
-      <img src="{{url_for('static',filename='imagenes/disk.jpeg')}}" alt="">
+      <img src="{{url_for('static',filename='images/m.jpeg')}}" alt="">
+      <img src="{{url_for('static',filename='images/h.jpeg')}}" alt="">
+      <img src="{{url_for('static',filename='images/disk.jpeg')}}" alt="">
   </div>
 </div>
 
 
 
 <div class="contenedor4">
-    <h1>Nosotros</h1>
-        <p>Nuesta ubicacion</p>
-        <p>Nosotros</p>
+    <h1>THE STORE TEAM</h1>
+    <div id="content">
+       <!-- <H2>Nuesta ubicacion</H2>
+
+        <H2>Nosotros</H2>-->
+    </div>
+
 
 </div>
 

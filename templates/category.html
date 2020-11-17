@@ -2,34 +2,25 @@
 
 {% block body %}
 
-<div class="products wrappers">
-  <form action="" class="contenedor1">
-    <h1>CATEGORIA</h1>
-    <label for=""></label>
-    <input type="text" name="product" value="" placeholder="producto">
-    <label for=""></label>
-    <input type="number" name="price" value="" placeholder="precio">
-    <label for=""></label>
-    <input type="text" name="quan" value="" placeholder="cantidad">
-  </form>
+<div class="grilla">
+    <h1 class="contenedor1">CATEGORIAS</h1>
+    <div class="grilla2">
+        <p>PARTES</p>
+        <img src="{{url_for('static',filename='images/m.jpeg')}}" alt="categoria1">
+    </div>
+
+    <div class="grilla2">
+        <p>PORTATILES</p>
+        <img src="{{url_for('static',filename='images/h.jpeg')}}" alt="categoria2">
+    </div>
+
+     <div>
+         <p>TELEVISORES</p>
+        <img src="{{url_for('static',filename='images/disk.jpeg')}}" alt="categoria3">
+     </div>
 
 </div>
 
-    <div>
-        <img src="" alt="categoria1">
-    </div>
-
-    <div>
-        <img src="" alt="categoria2">
-    </div>
-
-    <div>
-        <img src="" alt="categoria3">
-    </div>
-
-    <div>
-        <img src="" alt="categoria4">
-    </div>
 
 
 
