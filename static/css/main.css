@@ -1,11 +1,12 @@
 *{
-  color: darkgray;
+  color: #fb4201;
+
 }
 
 body {
   height: 100%;
-    background: rgb(57,110,14);
-  background: linear-gradient(117deg, rgba(57,110,14,1) 0%, rgba(12,103,24,1) 100%);
+  background: rgb(50,139,223);
+  background: linear-gradient(315deg, rgba(50,139,223,1) 20%, rgba(5,79,163,1) 100%);
 }
 
 
