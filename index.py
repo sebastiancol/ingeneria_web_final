@@ -148,7 +148,46 @@ def edit_product(id):
 def category():
     return render_template('category.html')
 
-# CATEGORY
+
+'''
+@app.route('/add_category', methods=['POST'])
+def create_product():
+    if request.method == 'POST':
+        product = Product(
+            name=request.form['name'],
+            price=request.form['price'],
+            quantity=request.form['quantity'],
+        )
+        db.session.add(product)
+        db.session.commit()
+        flash('Se ha guardado el producto correctamente.')
+        return redirect(url_for("category"))
+
+
+@app.route('/delete_category/<string:id>')
+def delete_product(id):
+    product = Product.query.get(id)
+    db.session.delete(product)
+    db.session.commit()
+    flash('Producto eliminado.')
+    return redirect(url_for("category"))
+
+
+@app.route('/edit_category/<string:id>', methods=['POST', 'GET'])
+def edit_product(id):
+    product = Product.query.get(id)
+    if request.method == 'GET':
+        return render_template("edit_category.html", product=product)
+    else:
+        product.name =name=request.form['name']
+        product.price=request.form['price']
+        product.quantity=request.form['quantity']
+        db.session.commit()
+        flash('Categoria actualizado.')
+        return redirect(url_for("category"))
+'''
+
+# invoice
 
 
 @app.route('/invoice')
