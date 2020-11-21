@@ -16,3 +16,9 @@
   background: #12fa;
   flex-direction: column;
 }*/
+
+.table{
+    display: grid;
+    /*grid-template-columns: ;
+    grid-template-columns: ;*/
+}

@@ -28,7 +28,11 @@
     justify-content: center;
     align-content: center;
     backface-visibility: hidden;
-    flex-flow: column ;
+    display: flex;
+    flex-flow: wrap ;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .border:hover{
@@ -48,6 +52,12 @@
 .border-title{
     display: grid;
     align-content: space-around;
+}
+
+.border a{
+    margin: 0;
+    padding: 0;
+    style:none;
 }
 
 

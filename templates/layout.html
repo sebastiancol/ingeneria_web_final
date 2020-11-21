@@ -11,7 +11,24 @@
 </head>
 
 <body>
+
+  <div class="contenedor1">
+
+  <h1 >THE STORE</h1>
+
+   </div>
+
+   <div class="contenedor2">
+      <ul class="list">
+        <li class="element"><a href="">INICIO</a></li>
+        <li class="element"><a href="{{url_for('products')}}">PRODUCTOS</a></li>
+        <li class="element"><a href="{{url_for('category')}}">CATEGORIA</a></li>
+        <li class="element"><a href="{{url_for('invoice')}}">FACTURA</a></li>
+      </ul>
+   </div>
   <div class="container pt-4">
+
+
     {% block body%}
 
     {% endblock%}
