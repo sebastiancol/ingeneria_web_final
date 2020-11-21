@@ -148,6 +148,9 @@ def edit_product(id):
 def category():
     return render_template('category.html')
 
+@app.route('/create_category')
+def create_category():
+    return render_template('create_categories.html')
 
 '''
 @app.route('/add_category', methods=['POST'])
@@ -177,11 +180,11 @@ def delete_product(id):
 def edit_product(id):
     product = Product.query.get(id)
     if request.method == 'GET':
-        return render_template("edit_category.html", product=product)
+        return render_template("edit_category.html", category=category)
     else:
         product.name =name=request.form['name']
-        product.price=request.form['price']
-        product.quantity=request.form['quantity']
+        product.description=request.form['price']
+        #product.quantity=request.form['quantity']
         db.session.commit()
         flash('Categoria actualizado.')
         return redirect(url_for("category"))

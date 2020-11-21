@@ -6,9 +6,10 @@
 
         <div class="grilla">
             <div class="border ">
-                <p>HERRAMIENTAS</p>
-                <img class="imagen" src="{{url_for('static',filename='images/tools.png')}}" alt="categoria5">
-                <a href=""></a>
+                <a href="{{url_for('create_category')}}">
+                    <img class="imagen" src="{{url_for('static',filename='images/tools.png')}}" alt="categoria5">
+                    <p>HERRAMIENTAS</p>
+                </a>
             </div>
             <div class="border">
                  <p>LAPTOPS</p>
@@ -33,11 +34,6 @@
             </div>
 
         </div>
-
-
-
-
-
 
 
 {% endblock %}
