@@ -95,7 +95,7 @@ class Payment(db.Model):
 
 @app.route('/')
 def home():
-    return render_template('store.html')
+    return render_template('index.html')
 
 # PRODUCTS
 
