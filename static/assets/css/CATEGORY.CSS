@@ -1,3 +1,13 @@
+.contenedor1 {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1em;
+  padding: 50px;
+}
 
 .grilla{
     display: grid;
