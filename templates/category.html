@@ -1,4 +1,5 @@
-{% extends 'layout.html' %} {% block content %}
+{% extends 'layout.html' %}
+{% block content %}
 
 <div class="wrapper">
   <div class="main-panel">
@@ -7,44 +8,42 @@
         <div class="row">
           <div class="col-md-12 mx-auto">
 
+            <h1 class="contenedor1"> CATEGORIAS</h1>
 
+            <div class="grilla">
 
+                <div class="border ">
+                    <a href="{{url_for('categories')}}"><p>HERRAMIENTAS</p> </a>
 
-        <h1 class="contenedor1"> CATEGORIAS</h1>
+                    <img class="imagen" src="{{url_for('static',filename='images/tools.png')}}" alt="categoria5">
+                </div>
+                <div class="border">
+                    <a href="{{url_for('categories')}}"><p>LAPTOPS</p> </a>
+                     <img class="imagen" src="{{url_for('static',filename='images/laptop.jpg')}}" alt="categoria2">
+                </div>
+                <div class="border">
+                    <a href="{{url_for('categories')}}"><p>DESKTOP</p> </a>
+                    <img class="imagen" src="{{url_for('static',filename='images/AiO.png')}}" alt="categoria3">
 
-        <div class="grilla">
-            <div class="border ">
-                <a href="{{url_for('create_category')}}"><p>HERRAMIENTAS</p> </a>
-                <img class="imagen" src="{{url_for('static',filename='images/tools.png')}}" alt="categoria5">
+                </div>
+                <div class="border">
+                    <a href="{{url_for('categories')}}"><p>PERIFERISCOS</p></a>
+                    <img class="imagen" src="{{url_for('static',filename='images/perisferics.png')}}" alt="categoria4">
+                </div>
 
+                <div class="border">
+                    <a href="{{url_for('categories')}}"><p>COMPONENTES</p></a>
+                    <img class="imagen" src="{{url_for('static',filename='images/m.jpeg')}}" alt="categoria1">
+                </div>
+                <div class="border">
+                    <a href=""><p>MONITORES</p></a>
+                    <img class="imagen" src="{{url_for('static',filename='images/monitor.jpeg')}}" alt="categoria6">
+                </div>
             </div>
-            <div class="border">
-                <a href="{{url_for('create_category')}}"><p>LAPTOPS</p> </a>
-                 <img class="imagen" src="{{url_for('static',filename='images/laptop.jpg')}}" alt="categoria2">
-            </div>
-            <div class="border">
-                <a href="{{url_for('create_category')}}"><p>DESKTOP</p> </a>
-                <img class="imagen" src="{{url_for('static',filename='images/AiO.png')}}" alt="categoria3">
 
-            </div>
-            <div class="border">
-                <a href="{{url_for('create_category')}}"><p>PERIFERISCOS</p></a>
-                <img class="imagen" src="{{url_for('static',filename='images/perisferics.png')}}" alt="categoria4">
-            </div>
-
-            <div class="border">
-                <a href="{{url_for('create_category')}}"><p>COMPONENTES</p></a>
-                <img class="imagen" src="{{url_for('static',filename='images/m.jpeg')}}" alt="categoria1">
-            </div>
-            <div class="border">
-                <a href=""><p>MONITORES</p></a>
-                <img class="imagen" src="{{url_for('static',filename='images/monitor.jpeg')}}" alt="categoria6">
-            </div>
-
+             <div class="contenedor4">
+            <h1>THE STORE TEAM</h1>
         </div>
-
-
-
           </div>
         </div>
       </div>

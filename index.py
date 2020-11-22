@@ -99,11 +99,14 @@ def home():
 
 # PRODUCTS
 
+@app.route('/product')
+def product():
+    return render_template('products.html')
 
 @app.route('/products')
 def products():
     products = Product.query.all()
-    return render_template('products.html', products=products)
+    return render_template('create_products.html', products=products)
 
 
 @app.route('/add_product', methods=['POST'])
@@ -148,47 +151,46 @@ def edit_product(id):
 def category():
     return render_template('category.html')
 
-@app.route('/create_category')
-def create_category():
-    return render_template('create_categories.html')
+@app.route('/categories')
+def categories():
+    category = Category.query.all()
+    return render_template('create_categories.html', category=category)
 
-'''
+
 @app.route('/add_category', methods=['POST'])
-def create_product():
+def create_categories():
     if request.method == 'POST':
-        product = Product(
-            name=request.form['name'],
-            price=request.form['price'],
-            quantity=request.form['quantity'],
+        category = Category(
+            category=request.form['name'],
+            description=request.form['description']
         )
-        db.session.add(product)
+        db.session.add(category)
         db.session.commit()
-        flash('Se ha guardado el producto correctamente.')
+        flash('Se ha guardado la categoria correctamente.')
         return redirect(url_for("category"))
 
 
 @app.route('/delete_category/<string:id>')
-def delete_product(id):
-    product = Product.query.get(id)
-    db.session.delete(product)
+def delete_categories(id):
+    category = Category.query.get(id)
+    db.session.delete(category)
     db.session.commit()
-    flash('Producto eliminado.')
+    flash('Categoria eliminada.')
     return redirect(url_for("category"))
 
 
 @app.route('/edit_category/<string:id>', methods=['POST', 'GET'])
-def edit_product(id):
-    product = Product.query.get(id)
+def edit_categories(id):
+    category = Category.query.get(id)
     if request.method == 'GET':
         return render_template("edit_category.html", category=category)
     else:
-        product.name =name=request.form['name']
-        product.description=request.form['price']
-        #product.quantity=request.form['quantity']
+        category.name =name=request.form['name']
+        category.description=request.form['description']
         db.session.commit()
         flash('Categoria actualizado.')
         return redirect(url_for("category"))
-'''
+
 
 # invoice
 

@@ -44,7 +44,7 @@
               </a>
             </li>
             <li>
-              <a class="nav-link" href="{{url_for('products')}}">
+              <a class="nav-link" href="{{url_for('product')}}">
                 <i class="nc-icon nc-notes"></i>
                 <p>Productos</p>
               </a>
@@ -81,7 +81,11 @@
         </div>
       </nav>
       <!-- End Navbar -->
-      {% block content%} {% endblock%}
+
+      {% block content%}
+
+      {% endblock%}
+
     </div>
 
     <!--   Core JS Files   -->
