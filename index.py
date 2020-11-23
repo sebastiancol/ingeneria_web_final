@@ -120,7 +120,7 @@ def create_product():
         db.session.add(product)
         db.session.commit()
         flash('Se ha guardado el producto correctamente.')
-        return redirect(url_for("products"))
+        return redirect(url_for("create_products.html"))
 
 
 @app.route('/delete_product/<string:id>')
@@ -161,13 +161,13 @@ def categories():
 def create_categories():
     if request.method == 'POST':
         category = Category(
-            category=request.form['name'],
-            description=request.form['description']
+            name=request.form['name'],
+            description=request.form['description'],
         )
         db.session.add(category)
         db.session.commit()
         flash('Se ha guardado la categoria correctamente.')
-        return redirect(url_for("category"))
+        return redirect(url_for("categories"))
 
 
 @app.route('/delete_category/<string:id>')
@@ -176,7 +176,7 @@ def delete_categories(id):
     db.session.delete(category)
     db.session.commit()
     flash('Categoria eliminada.')
-    return redirect(url_for("category"))
+    return redirect(url_for("categories"))
 
 
 @app.route('/edit_category/<string:id>', methods=['POST', 'GET'])
@@ -189,7 +189,7 @@ def edit_categories(id):
         category.description=request.form['description']
         db.session.commit()
         flash('Categoria actualizado.')
-        return redirect(url_for("category"))
+        return redirect(url_for("categories"))
 
 
 # invoice
