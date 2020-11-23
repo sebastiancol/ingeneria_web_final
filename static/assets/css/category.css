@@ -22,8 +22,12 @@
 
 
 .imagen{
-    width: 100%;
+    width: 50%;
     height: auto;
+}
+.imagen2{
+    width: 60%;
+    height: 60%;
 }
 
 .border{
