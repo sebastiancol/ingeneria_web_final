@@ -15,7 +15,7 @@ ma = Marshmallow(app)
 
 # Database initialization
 #para heroku
-app.config['SQLALCHEMY_DATABASE_URI'] = 'os.environ.get('DATABASE_URL')'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://lwfupdfvbhyvjl:b7b7b2f0b08e9899fc12267d872aa0feb2368c90440911425c93f4b2ffc8ff77@ec2-54-152-175-141.compute-1.amazonaws.com:5432/d86l6hdd9k2o8c'
 #para local
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:C0l0mb14++@localhost/postgres'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
