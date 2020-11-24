@@ -14,7 +14,7 @@ api = Api(app)
 ma = Marshmallow(app)
 
 # Database initialization
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:C0l0mb14++@localhost/postgres'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
